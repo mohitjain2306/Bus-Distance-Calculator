@@ -480,7 +480,7 @@ def get_load_category(load_per_km):
 
 def get_temp_impact(temp):
     if 15 <= temp <= 25:
-        return "🌡️ Perfect weather for efficiency!", "🟢", "metric-excellent", "#27ae60"
+        return "🌡️ Perfect temperature for efficiency!", "🟢", "metric-excellent", "#27ae60"
     elif 10 <= temp < 15 or 25 < temp <= 30:
         return "🌤️ Temperature is okay, slight impact", "🟡", "metric-good", "#f39c12"
     else:
@@ -794,7 +794,7 @@ def main():
                     help="Heavier loads mean more fuel consumption - let's see how this affects your efficiency!"
                 )
                 
-                st.markdown("**🚗 How fast are you planning to go?**")
+                st.markdown("**🚗 What's the bus speed?**")
                 speed = st.number_input(
                     "Average speed in km/h", 
                     min_value=0.0, max_value=200.0, value=60.0, step=0.1, 
@@ -802,7 +802,7 @@ def main():
                     help="Sweet spot is usually 50-80 km/h for optimal fuel efficiency!"
                 )
                 
-                st.markdown("**🌡️ What's the weather like?**")
+                st.markdown("**🌡️ What's the engine temperature?**")
                 temperature = st.number_input(
                     "Outside temperature in °C", 
                     min_value=-30.0, max_value=50.0, value=20.0, step=0.1, 
@@ -1023,7 +1023,7 @@ def main():
                         eff_title, eff_class, eff_icon, eff_color
                     )
                     display_metric_card(
-                        "Weather Impact", f"{temperature:.1f} °C", 
+                        "temperature Impact", f"{temperature:.1f} °C", 
                         temp_title, temp_class, temp_icon, temp_color
                     )
                     display_metric_card(
