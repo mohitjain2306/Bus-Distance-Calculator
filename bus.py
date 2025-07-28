@@ -8,6 +8,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from datetime import datetime
 import time
+import pandas as pd
 
 def load_custom_css():
     st.markdown("""
@@ -430,6 +431,12 @@ def load_model():
         st.warning("🤔 Hmm, I can't find a pre-trained model. Let's train one together first!")
         return None
 
+def get_fuel_dataset_csv():
+    """Return sample CSV data as string for download"""
+    sample_data =  pd.read_csv('fuel_dataset.csv')
+    return sample_data.to_csv(index=False)
+    
+
 def train_model(data):
     try:
         required_cols = ['Fuel_Level_Percentage', 'Vehicle_Load_kg', 
@@ -692,59 +699,88 @@ def main():
     
     st.markdown('<div class="training-section slide-in-left">', unsafe_allow_html=True)
     with st.expander("🧠 Train Your AI Assistant", expanded=False):
-            st.markdown('<div class="section-header-white">📊 Upload Your Bus Data</div>', unsafe_allow_html=True)
-            
-            uploaded_file = st.file_uploader(
-                "Drop your CSV file here - I'll learn from your historical data!", 
-                type="csv",
-                help="Upload your bus performance history and I'll become smarter at predicting efficiency!"
+        st.markdown('<div class="section-header-white">📊 Upload Your Bus Data</div>', unsafe_allow_html=True)
+        
+        # Add download section for sample data
+        st.markdown("---")
+        st.markdown('<div class="section-header-white">📥 Need Training Data?</div>', unsafe_allow_html=True)
+        st.markdown("**💡 Don't have your own bus data? Download our sample dataset to get started!**")
+        
+        col_download1, col_download2 = st.columns([1, 1])
+        with col_download1:
+            csv_data = get_fuel_dataset_csv()
+            st.download_button(
+                label="📁 Download Sample Bus Dataset",
+                data=csv_data,
+                file_name="fuel_dataset.csv",
+                mime="text/csv",
+                use_container_width=True,
+                type="secondary",
+                help="Download this sample dataset, then upload it below to train your model!"
             )
-            
-            if uploaded_file is not None:
-                try:
-                    data = pd.read_csv(uploaded_file)
-                    
-                    col1, col2 = st.columns([1, 1])
-                    with col1:
-                        st.markdown("**👀 Here's a peek at your data:**", unsafe_allow_html=True)
-                        st.dataframe(data.head(), use_container_width=True)
-                    
-                    with col2:
-                        st.markdown("**📊 Quick data summary:**", unsafe_allow_html=True)
-                        st.markdown(f"**📋 Total Records:** {len(data)} (Great dataset!)", unsafe_allow_html=True)
-                        st.markdown(f"**📁 Data Columns:** {len(data.columns)}", unsafe_allow_html=True)
-                        missing_count = data.isnull().sum().sum()
-                        if missing_count == 0:
-                            st.markdown("**✅ Data Quality:** Perfect! No missing values", unsafe_allow_html=True)
+        
+        with col_download2:
+            st.markdown("""
+            **🎯 How to use:**
+            1. Click 'Download Sample Dataset'
+            2. Upload the downloaded file below
+            3. Train your AI model
+            4. Start making predictions!
+            """)
+        
+        st.markdown("---")
+        
+        uploaded_file = st.file_uploader(
+            "Drop your CSV file here - I'll learn from your historical data!", 
+            type="csv",
+            help="Upload your bus performance history and I'll become smarter at predicting efficiency!"
+        )
+        
+        if uploaded_file is not None:
+            try:
+                data = pd.read_csv(uploaded_file)
+                
+                col1, col2 = st.columns([1, 1])
+                with col1:
+                    st.markdown("**👀 Here's a peek at your data:**", unsafe_allow_html=True)
+                    st.dataframe(data.head(), use_container_width=True)
+                
+                with col2:
+                    st.markdown("**📊 Quick data summary:**", unsafe_allow_html=True)
+                    st.markdown(f"**📋 Total Records:** {len(data)} (Great dataset!)", unsafe_allow_html=True)
+                    st.markdown(f"**📁 Data Columns:** {len(data.columns)}", unsafe_allow_html=True)
+                    missing_count = data.isnull().sum().sum()
+                    if missing_count == 0:
+                        st.markdown("**✅ Data Quality:** Perfect! No missing values", unsafe_allow_html=True)
+                    else:
+                        st.markdown(f"**⚠️ Missing Values:** {missing_count} (we can handle this!)", unsafe_allow_html=True)
+                
+                if st.button("🚀 Let's Train Your AI!", use_container_width=True):
+                    with st.spinner("🤖 Teaching your AI about bus efficiency... This is exciting!"):
+                        progress_bar = st.progress(0)
+                        progress_messages = [
+                            "📖 Reading your data...",
+                            "🔍 Analyzing patterns...", 
+                            "🧠 Learning from examples...",
+                            "⚡ Optimizing predictions...",
+                            "✨ Almost ready!"
+                        ]
+                        
+                        for i in range(100):
+                            if i % 20 == 0 and i < 100:
+                                st.info(progress_messages[i//20])
+                            time.sleep(0.01)
+                            progress_bar.progress(i + 1)
+                        
+                        model, message = train_model(data)
+                        if model is not None:
+                            st.success(f"🎉 {message}")
+                            st.session_state.model = model
+                            st.balloons()
                         else:
-                            st.markdown(f"**⚠️ Missing Values:** {missing_count} (we can handle this!)", unsafe_allow_html=True)
-                    
-                    if st.button("🚀 Let's Train Your AI!", use_container_width=True):
-                        with st.spinner("🤖 Teaching your AI about bus efficiency... This is exciting!"):
-                            progress_bar = st.progress(0)
-                            progress_messages = [
-                                "📖 Reading your data...",
-                                "🔍 Analyzing patterns...", 
-                                "🧠 Learning from examples...",
-                                "⚡ Optimizing predictions...",
-                                "✨ Almost ready!"
-                            ]
-                            
-                            for i in range(100):
-                                if i % 20 == 0 and i < 100:
-                                    st.info(progress_messages[i//20])
-                                time.sleep(0.01)
-                                progress_bar.progress(i + 1)
-                            
-                            model, message = train_model(data)
-                            if model is not None:
-                                st.success(f"🎉 {message}")
-                                st.session_state.model = model
-                                st.balloons()
-                            else:
-                                st.error(f"😅 {message}")
-                except Exception as e:
-                    st.error(f"🤔 Hmm, I had trouble reading your file: {str(e)}")
+                            st.error(f"😅 {message}")
+            except Exception as e:
+                st.error(f"🤔 Hmm, I had trouble reading your file: {str(e)}")
     st.markdown('</div>', unsafe_allow_html=True)
     
     if 'model' in st.session_state:
@@ -1023,7 +1059,7 @@ def main():
                         eff_title, eff_class, eff_icon, eff_color
                     )
                     display_metric_card(
-                        "temperature Impact", f"{temperature:.1f} °C", 
+                        "Temperature Impact", f"{temperature:.1f} °C", 
                         temp_title, temp_class, temp_icon, temp_color
                     )
                     display_metric_card(
@@ -1103,9 +1139,6 @@ def main():
                 </div>
             </div>
             """, unsafe_allow_html=True)
-            
-           
-            st.markdown('</div>', unsafe_allow_html=True)
     
     st.markdown("""
     <div style="margin-top: 3rem; text-align: center; color: rgba(255,255,255,0.7); padding: 2rem;">
