@@ -16,18 +16,18 @@ def load_custom_css():
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
     html, body, .stApp, .main {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%) !important;
         min-height: 100vh !important;
     }
     
     .stApp {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%) !important;
         background-attachment: fixed !important;
     }
     
     .main {
         padding: 0 !important;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%) !important;
         min-height: 100vh !important;
         background-attachment: fixed !important;
     }
@@ -38,63 +38,64 @@ def load_custom_css():
     }
     
     .main-header {
-        background: rgba(255, 255, 255, 0.1);
+        background: linear-gradient(145deg, #1a1f33, #0f1420);
         backdrop-filter: blur(20px);
         border-radius: 20px;
         padding: 2rem;
         margin: 1rem 0 2rem 0;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(0, 150, 255, 0.2);
         text-align: center;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 25px 50px rgba(0, 150, 255, 0.15);
     }
     
     .main-title {
         font-family: 'Inter', sans-serif;
         font-size: 3rem;
         font-weight: 700;
-        color: white;
+        color: #e1f5fe;
         margin: 0;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
     }
     
     .main-subtitle {
         font-family: 'Inter', sans-serif;
         font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.9);
+        color: #b3e5fc;
         margin-top: 0.5rem;
         font-weight: 300;
     }
     
     .glass-card {
-        background: rgba(255, 255, 255, 0.15);
+        background: linear-gradient(145deg, #1a1f33, #0f1420);
         backdrop-filter: blur(20px);
         border-radius: 20px;
         padding: 2rem;
         margin: 1rem 0;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 150, 255, 0.2);
+        box-shadow: 0 25px 50px rgba(0, 150, 255, 0.15);
         transition: all 0.3s ease;
     }
     
     .glass-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
     }
     
     .input-section {
-        background: rgba(255, 255, 255, 0.95);
+        background: linear-gradient(145deg, #0f1420, #1a1f33);
         border-radius: 20px;
         padding: 2rem;
         margin: 1rem 0;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 25px 50px rgba(0, 150, 255, 0.15);
         backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 150, 255, 0.15);
     }
     
     .section-header {
         font-family: 'Inter', sans-serif;
         font-size: 1.5rem;
         font-weight: 600;
-        color: #ffffff;
+        color: #e1f5fe;
         margin-bottom: 1.5rem;
         display: flex;
         align-items: center;
@@ -105,28 +106,28 @@ def load_custom_css():
         font-family: 'Inter', sans-serif;
         font-size: 1.5rem;
         font-weight: 600;
-        color: white;
+        color: #e1f5fe;
         margin-bottom: 1.5rem;
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
     }
     
     .result-card {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        background: linear-gradient(135deg, #0096ff 0%, #00d4ff 100%);
         border-radius: 15px;
         padding: 2rem;
         margin: 1rem 0;
-        color: white;
+        color: #0a0e1a;
         text-align: center;
-        box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         transition: all 0.3s ease;
     }
     
     .result-card:hover {
         transform: scale(1.02);
-        box-shadow: 0 12px 35px rgba(79, 172, 254, 0.4);
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.7);
     }
     
     .result-title {
@@ -143,51 +144,52 @@ def load_custom_css():
     }
     
     .metric-card {
-        background: white;
+        background: linear-gradient(145deg, #1a1f33, #0f1420);
         border-radius: 15px;
         padding: 1.5rem;
         margin: 0.5rem 0;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 10px 30px rgba(0, 150, 255, 0.1);
         border-left: 4px solid;
         transition: all 0.3s ease;
     }
     
     .metric-card:hover {
         transform: translateX(5px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
     }
     
-    .metric-excellent { border-left-color: #27ae60; }
-    .metric-good { border-left-color: #f39c12; }
-    .metric-average { border-left-color: #e67e22; }
-    .metric-poor { border-left-color: #e74c3c; }
+    .metric-excellent { border-left-color: #00ff41; }
+    .metric-good { border-left-color: #00d4ff; }
+    .metric-average { border-left-color: #ffc107; }
+    .metric-poor { border-left-color: #dc3545; }
     
     .metric-title {
         font-size: 1.1rem;
         font-weight: 600;
         margin-bottom: 0.5rem;
-        color: #ffffff;
+        color: #e1f5fe;
     }
     
     .metric-value {
         font-size: 0.95rem;
-        color: #7f8c8d;
+        color: #b3e5fc;
         margin: 0.2rem 0;
     }
     
     .stDataFrame {
-        background: white !important;
+        background: linear-gradient(145deg, #1a1f33, #0f1420) !important;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 150, 255, 0.1);
+        border: 1px solid rgba(0, 150, 255, 0.15);
     }
     
     .stDataFrame > div {
-        background: white !important;
+        background: linear-gradient(145deg, #1a1f33, #0f1420) !important;
     }
     
     .progress-container {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(0, 150, 255, 0.1);
         border-radius: 10px;
         height: 8px;
         margin: 1rem 0;
@@ -198,45 +200,52 @@ def load_custom_css():
         height: 100%;
         border-radius: 10px;
         transition: width 1s ease-in-out;
+        background: linear-gradient(135deg, #00d4ff 0%, #0096ff 100%);
     }
     
     .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
+        background: linear-gradient(135deg, #00d4ff 0%, #0096ff 100%);
+        color: #0a0e1a;
+        border: 2px solid #00d4ff;
         border-radius: 25px;
         padding: 0.75rem 2rem;
         font-weight: 600;
         font-size: 1rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
     }
     
     .stButton > button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+        box-shadow: 0 12px 35px rgba(0, 212, 255, 0.5);
     }
     
     .streamlit-expanderHeader {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(0, 150, 255, 0.1);
         border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(0, 150, 255, 0.15);
+        color: #e1f5fe;
     }
     
     .stNumberInput > div > div > input {
         border-radius: 10px;
-        border: 2px solid #e1e8ed;
+        border: 2px solid rgba(0, 150, 255, 0.2);
         transition: all 0.3s ease;
+        background: rgba(26, 31, 51, 0.95);
+        color: #e1f5fe;
     }
     
     .stNumberInput > div > div > input:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        border-color: #0096ff;
+        box-shadow: 0 0 0 3px rgba(0, 150, 255, 0.1);
     }
     
     .stSelectbox > div > div > select {
         border-radius: 10px;
-        border: 2px solid #e1e8ed;
+        border: 2px solid rgba(0, 150, 255, 0.2);
+        background: rgba(26, 31, 51, 0.95);
+        color: #e1f5fe;
     }
     
     .fade-in {
@@ -267,46 +276,46 @@ def load_custom_css():
     }
     
     .alert-success {
-        background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
-        color: #ffffff;
+        background: linear-gradient(145deg, #1a1f33, #0f1420);
+        color: #00ff41;
         border-radius: 15px;
         padding: 1rem;
         margin: 1rem 0;
-        border: none;
-        box-shadow: 0 4px 20px rgba(132, 250, 176, 0.3);
+        border: 2px solid #00ff41;
+        box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
     }
     
     .alert-warning {
-        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        color: #ffffff;
+        background: linear-gradient(145deg, #1a1f33, #0f1420);
+        color: #ffc107;
         border-radius: 15px;
         padding: 1rem;
         margin: 1rem 0;
-        border: none;
-        box-shadow: 0 4px 20px rgba(252, 182, 159, 0.3);
+        border: 2px solid #ffc107;
+        box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
     }
     
     .alert-info {
-        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        color: #ffffff;
+        background: linear-gradient(145deg, #1a1f33, #0f1420);
+        color: #00d4ff;
         border-radius: 15px;
         padding: 1rem;
         margin: 1rem 0;
-        border: none;
-        box-shadow: 0 4px 20px rgba(168, 237, 234, 0.3);
+        border: 2px solid #00d4ff;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
     }
     
     .training-section {
-        background: rgba(255, 255, 255, 0.15);
+        background: linear-gradient(145deg, #1a1f33, #0f1420);
         border-radius: 20px;
         padding: 2rem;
         margin: 1rem 0;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(0, 150, 255, 0.2);
         backdrop-filter: blur(10px);
     }
     
     .stApp > div:first-child {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%);
     }
     
     .element-container:empty {
@@ -363,23 +372,23 @@ def load_custom_css():
     }
     
     .streamlit-expanderContent {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 150, 255, 0.05);
         border-radius: 10px;
-        color: white;
+        color: #e1f5fe;
     }
     
     .stNumberInput label, .stSelectbox label {
-        color: #ffffff !important;
+        color: #e1f5fe !important;
         font-weight: 600;
     }
     
     .stMarkdown p {
-        color: #ffffff;
+        color: #e1f5fe;
         font-weight: 600;
     }
     
     .glass-card .stMarkdown p {
-        color: white !important;
+        color: #e1f5fe !important;
     }
     
     @media (max-width: 768px) {
@@ -397,27 +406,29 @@ def load_custom_css():
     }
     
     .stSuccess {
-        background: rgba(255, 255, 255, 0.15) !important;
-        color: white !important;
-        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        background: linear-gradient(145deg, #1a1f33, #0f1420) !important;
+        color: #00ff41 !important;
+        border: 2px solid #00ff41 !important;
         border-radius: 15px !important;
         backdrop-filter: blur(20px) !important;
+        box-shadow: 0 0 20px rgba(0, 255, 65, 0.3) !important;
     }
 
     .stSuccess * {
-        color: white !important;
+        color: #00ff41 !important;
     }
 
     div[data-testid="stAlert"] {
-        background: rgba(255, 255, 255, 0.15) !important;
-        color: white !important;
-        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        background: linear-gradient(145deg, #1a1f33, #0f1420) !important;
+        color: #00d4ff !important;
+        border: 2px solid #00d4ff !important;
         border-radius: 15px !important;
         backdrop-filter: blur(20px) !important;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.3) !important;
     }
 
     div[data-testid="stAlert"] * {
-        color: white !important;
+        color: #00d4ff !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -469,68 +480,68 @@ def train_model(data):
 
 def get_efficiency_category(efficiency):
     if efficiency > 2.0:
-        return "🌟 Excellent! You're a fuel-saving superstar!", "🟢", "metric-excellent", "#27ae60"
+        return "🌟 Excellent! You're a fuel-saving superstar!", "🟢", "metric-excellent", "#00ff41"
     elif efficiency > 1.5:
-        return "👍 Pretty good! You're doing well!", "🟡", "metric-good", "#f39c12"
+        return "👍 Pretty good! You're doing well!", "🟡", "metric-good", "#00d4ff"
     elif efficiency > 1.0:
-        return "🤔 Average performance - room for improvement", "🟠", "metric-average", "#e67e22"
+        return "🤔 Average performance - room for improvement", "🟠", "metric-average", "#ffc107"
     else:
-        return "😬 Let's work on this together", "🔴", "metric-poor", "#e74c3c"
+        return "😬 Let's work on this together", "🔴", "metric-poor", "#dc3545"
 
 def get_load_category(load_per_km):
     if load_per_km < 10:
-        return "🪶 Light as a feather - efficient load!", "🟢", "metric-excellent", "#27ae60"
+        return "🪶 Light as a feather - efficient load!", "🟢", "metric-excellent", "#00ff41"
     elif load_per_km < 20:
-        return "⚖️ Well-balanced load", "🟡", "metric-good", "#f39c12"
+        return "⚖️ Well-balanced load", "🟡", "metric-good", "#00d4ff"
     else:
-        return "🏋️ Heavy load - consider optimization", "🔴", "metric-poor", "#e74c3c"
+        return "🏋️ Heavy load - consider optimization", "🔴", "metric-poor", "#dc3545"
 
 def get_temp_impact(temp):
     if 15 <= temp <= 25:
-        return "🌡️ Perfect temperature for efficiency!", "🟢", "metric-excellent", "#27ae60"
+        return "🌡️ Perfect temperature for efficiency!", "🟢", "metric-excellent", "#00ff41"
     elif 10 <= temp < 15 or 25 < temp <= 30:
-        return "🌤️ Temperature is okay, slight impact", "🟡", "metric-good", "#f39c12"
+        return "🌤️ Temperature is okay, slight impact", "🟡", "metric-good", "#00d4ff"
     else:
-        return "🌡️ Extreme temperature - efficiency affected", "🔴", "metric-poor", "#e74c3c"
+        return "🌡️ Extreme temperature - efficiency affected", "🔴", "metric-poor", "#dc3545"
 
 def get_route_impact(route_type):
     if route_type == "Highway":
-        return "🛣️ Smooth sailing - highways are efficient!", "🟢", "metric-excellent", "#27ae60"
+        return "🛣️ Smooth sailing - highways are efficient!", "🟢", "metric-excellent", "#00ff41"
     elif route_type == "Urban":
-        return "🏙️ City driving - lots of stop-and-go", "🟡", "metric-good", "#f39c12"
+        return "🏙️ City driving - lots of stop-and-go", "🟡", "metric-good", "#00d4ff"
     elif route_type == "Rural":
-        return "🌄 Country roads - hills and curves ahead", "🟠", "metric-average", "#e67e22"
+        return "🌄 Country roads - hills and curves ahead", "🟠", "metric-average", "#ffc107"
     else:
         return "❓ Unknown route type", "❓", "metric-poor", "#95a5a6"
 
 def get_speed_impact(speed):
     if 50 <= speed <= 80:
-        return "🎯 Sweet spot! Perfect speed for efficiency", "🟢", "metric-excellent", "#27ae60"
+        return "🎯 Sweet spot! Perfect speed for efficiency", "🟢", "metric-excellent", "#00ff41"
     elif 30 <= speed < 50 or 80 < speed <= 100:
-        return "⚡ Decent speed, could be optimized", "🟡", "metric-good", "#f39c12"
+        return "⚡ Decent speed, could be optimized", "🟡", "metric-good", "#00d4ff"
     else:
-        return "🚀 Too fast or too slow for optimal efficiency", "🔴", "metric-poor", "#e74c3c"
+        return "🚀 Too fast or too slow for optimal efficiency", "🔴", "metric-poor", "#dc3545"
 
 def create_gauge_chart(value, title, max_value=100, color_scheme="blues"):
     fig = go.Figure(go.Indicator(
         mode = "gauge+number+delta",
         value = value,
         domain = {'x': [0, 1], 'y': [0, 1]},
-        title = {'text': title, 'font': {'size': 16, 'family': 'Inter'}},
+        title = {'text': title, 'font': {'size': 16, 'family': 'Inter', 'color': '#e1f5fe'}},
         delta = {'reference': max_value/2},
         gauge = {
-            'axis': {'range': [None, max_value], 'tickfont': {'size': 12}},
-            'bar': {'color': "rgba(79, 172, 254, 0.8)"},
-            'bgcolor': "white",
+            'axis': {'range': [None, max_value], 'tickfont': {'size': 12, 'color': '#b3e5fc'}},
+            'bar': {'color': "#00d4ff"},
+            'bgcolor': "#0a0e1a",
             'borderwidth': 2,
-            'bordercolor': "gray",
+            'bordercolor': "#0096ff",
             'steps': [
-                {'range': [0, max_value/3], 'color': 'rgba(231, 76, 60, 0.2)'},
-                {'range': [max_value/3, 2*max_value/3], 'color': 'rgba(243, 156, 18, 0.2)'},
-                {'range': [2*max_value/3, max_value], 'color': 'rgba(39, 174, 96, 0.2)'}
+                {'range': [0, max_value/3], 'color': 'rgba(220, 53, 69, 0.3)'},
+                {'range': [max_value/3, 2*max_value/3], 'color': 'rgba(255, 193, 7, 0.3)'},
+                {'range': [2*max_value/3, max_value], 'color': 'rgba(0, 255, 65, 0.3)'}
             ],
             'threshold': {
-                'line': {'color': "red", 'width': 4},
+                'line': {'color': "#dc3545", 'width': 4},
                 'thickness': 0.75,
                 'value': max_value * 0.8
             }
@@ -538,11 +549,11 @@ def create_gauge_chart(value, title, max_value=100, color_scheme="blues"):
     ))
     
     fig.update_layout(
-        font={'color': "#ffffff", 'family': 'Inter'},
+        font={'color': "#e1f5fe", 'family': 'Inter'},
         height=250,
         margin=dict(l=20, r=20, t=40, b=20),
-        paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(0,0,0,0)'
+        paper_bgcolor='rgba(26, 31, 51, 0.95)',
+        plot_bgcolor='#0a0e1a'
     )
     
     return fig
@@ -565,18 +576,18 @@ def create_metrics_visualization(metrics_data):
     
     fig.update_layout(
         title="Your Fleet Performance at a Glance",
-        title_font={'size': 18, 'family': 'Inter', 'color': 'white'},
+        title_font={'size': 18, 'family': 'Inter', 'color': '#e1f5fe'},
         xaxis_title="Performance Areas",
         yaxis_title="Your Score",
-        font={'color': 'white', 'family': 'Inter'},
-        paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(0,0,0,0)',
+        font={'color': '#e1f5fe', 'family': 'Inter'},
+        paper_bgcolor='rgba(26, 31, 51, 0.95)',
+        plot_bgcolor='#0a0e1a',
         height=400,
         margin=dict(l=20, r=20, t=60, b=40)
     )
     
-    fig.update_xaxes(gridcolor='rgba(255,255,255,0.1)', showgrid=True)
-    fig.update_yaxes(gridcolor='rgba(255,255,255,0.1)', showgrid=True)
+    fig.update_xaxes(gridcolor='rgba(0, 150, 255, 0.1)', showgrid=True)
+    fig.update_yaxes(gridcolor='rgba(0, 150, 255, 0.1)', showgrid=True)
     
     return fig
 
@@ -642,7 +653,7 @@ def main():
     hide_streamlit_style = """
     <style>
     .stApp, .stApp > div, .main, .block-container, html, body {
-        background:linear-gradient(135deg, #667eea 0%, #764ba2 33%, #f093fb 66%, #f5576c 100%) !important;
+        background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%) !important;
         background-attachment: fixed !important;
     }
     
@@ -680,7 +691,7 @@ def main():
     }
     
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        background: linear-gradient(135deg, #0a0e1a 0%, #1a1f33 100%) !important;
     }
     
     [data-testid="stHeader"] {
@@ -1114,7 +1125,7 @@ def main():
         else:
             st.markdown("""
             <div class="glass-card slide-in-right">
-                <div style="text-align: center; color: white; padding: 2rem;">
+                <div style="text-align: center; color: #e1f5fe; padding: 2rem;">
                     <h2 style="margin-bottom: 1rem;">🎯 Welcome to Your Smart Fleet Assistant!</h2>
                     <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem;">
                         I'm here to help you optimize your bus efficiency! Just fill in your details on the left, and I'll give you personalized insights.
@@ -1141,8 +1152,8 @@ def main():
             """, unsafe_allow_html=True)
     
     st.markdown("""
-    <div style="margin-top: 3rem; text-align: center; color: rgba(255,255,255,0.7); padding: 2rem;">
-        <hr style="border: 1px solid rgba(255,255,255,0.1); margin: 2rem 0;">
+    <div style="margin-top: 3rem; text-align: center; color: #b3e5fc; padding: 2rem;">
+        <hr style="border: 1px solid rgba(0, 150, 255, 0.1); margin: 2rem 0;">
         <p style="margin: 0;">🚌 Bus Efficiency Assistant</p>
         <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Machine Learning Model for Bus Distance Predictions</p>
     </div>
