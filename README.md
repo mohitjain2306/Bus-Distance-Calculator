@@ -14,7 +14,6 @@ A machine learning web app that predicts how far a bus can travel based on fuel,
 | Containerisation | Docker, Docker Compose |
 | Reverse Proxy | Nginx |
 | CI/CD | GitHub Actions |
-| Orchestration | Kubernetes (manifests ready) |
 | Version Control | Git, GitHub |
 
 ---
@@ -33,9 +32,6 @@ Bus-Distance-Calculator/
 │   └── nginx.conf            # reverse proxy config
 ├── scripts/
 │   └── deploy.sh             # one-command local deploy
-├── k8s/
-│   ├── deployment.yaml       # Kubernetes deployment
-│   └── service.yaml          # Kubernetes service
 ├── .github/
 │   └── workflows/
 │       └── docker-build.yml  # CI/CD pipeline
@@ -49,7 +45,7 @@ Bus-Distance-Calculator/
 
 ### Option 1 — with the deploy script
 \`\`\`bash
-git clone https://github.com/YOUR_USERNAME/Bus-Distance-Calculator.git
+git clone https://github.com/mohitjain2306/Bus-Distance-Calculator.git
 cd Bus-Distance-Calculator
 bash scripts/deploy.sh
 \`\`\`
@@ -82,8 +78,8 @@ Add these secrets in your GitHub repo settings:
 
 ## 👤 Author
 
-**Mohit Jain**
+**Mohit Jain** — Fresher | DevOps & Backend
+
 - GitHub: [@mohitjain2306](https://github.com/mohitjain2306)
-- Live App: [ Bus Efficiency Assistant](https://bus-distance-calculator.streamlit.app/)
+- Live App: [Bus Distance Calculator](https://bus-distance-calculator.streamlit.app/)
 - DockerHub: [mohitjain2306](https://hub.docker.com/u/mohitjain2306)
-# DevOps added
