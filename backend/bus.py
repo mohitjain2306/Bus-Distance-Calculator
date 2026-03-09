@@ -444,7 +444,7 @@ def load_model():
 
 def get_fuel_dataset_csv():
     """Return sample CSV data as string for download"""
-    sample_data =  pd.read_csv('fuel_dataset.csv')
+   sample_data = pd.read_csv(os.path.join(os.path.dirname(__file__), 'fuel_dataset.csv'))
     return sample_data.to_csv(index=False)
     
 
