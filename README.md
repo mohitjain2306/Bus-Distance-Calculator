@@ -1,78 +1,88 @@
 # 🚌 Bus Distance Calculator
 
-A practical tool for predicting how far your bus can travel based on current conditions. Upload your historical data, and get distance predictions along with efficiency insights for better fleet management.
+A machine learning web app that predicts how far a bus can travel based on fuel, load, speed, and route — containerised with Docker and deployed with a CI/CD pipeline.
 
-##  Key Features
+🔗 **Live App**: https://bus-distance-calculator.streamlit.app/
 
-###  Machine Learning Predictions
-Train models on your historical bus data to predict travel distances. The system automatically selects the best performing algorithm and provides accuracy metrics.
+---
 
-###  Web Dashboard  
-Simple interface for both individual predictions and bulk fleet analysis. Upload CSV files or enter data manually to get instant results.
+## 🛠️ Tech Stack
 
-###  Efficiency Analysis
-- Distance predictions based on fuel, load, speed, and route type
-- Fuel efficiency scoring and recommendations
-- Route optimization insights
-- Load impact analysis
+| Layer | Technology |
+|-------|-----------|
+| App | Python, Streamlit, Scikit-learn |
+| Containerisation | Docker, Docker Compose |
+| Reverse Proxy | Nginx |
+| CI/CD | GitHub Actions |
+| Orchestration | Kubernetes (manifests ready) |
+| Version Control | Git, GitHub |
 
-### Data Format
+---
 
-Your CSV file should include these columns:
+## 📁 Project Structure
 
-| Column | Description | Example |
-|--------|-------------|---------|
-| Fuel_Level_Percentage | Current fuel level (0-100%) | 75.5 |
-| Vehicle_Load_kg | Total load in kilograms | 1200 |
-| Speed_kmph | Average speed in km/h | 65 |
-| Temperature_C | Outside temperature in Celsius | 22.5 |
-| Route_Type | Highway, Urban, or Rural | "Highway" |
-| distance | Actual distance traveled (for training) | 145.2 |
+\`\`\`
+Bus-Distance-Calculator/
+├── backend/                  # Streamlit ML app
+│   ├── bus.py                # main app file
+│   ├── main.py               # ML training logic
+│   ├── fuel_dataset.csv      # training data
+│   ├── requirements.txt      # Python dependencies
+│   └── Dockerfile            # containerises the app
+├── frontend/
+│   └── nginx.conf            # reverse proxy config
+├── scripts/
+│   └── deploy.sh             # one-command local deploy
+├── k8s/
+│   ├── deployment.yaml       # Kubernetes deployment
+│   └── service.yaml          # Kubernetes service
+├── .github/
+│   └── workflows/
+│       └── docker-build.yml  # CI/CD pipeline
+├── docker-compose.yml
+└── .gitignore
+\`\`\`
 
-##  How to Get Started
+---
 
-1. **Start the dashboard**
-   ```bash
-   streamlit run bus.py
-   ```
+## 🚀 How to Run Locally
 
-2. **Train your model**
-   - Upload your historical bus data CSV
-   - Click "Let's Train Your AI!" 
-   - Wait for training to complete
+### Option 1 — with the deploy script
+\`\`\`bash
+git clone https://github.com/YOUR_USERNAME/Bus-Distance-Calculator.git
+cd Bus-Distance-Calculator
+bash scripts/deploy.sh
+\`\`\`
 
-3. **Make predictions**
-   - Enter individual bus details for quick checks
-   - Upload CSV files for fleet-wide analysis
+### Option 2 — with Docker Compose
+\`\`\`bash
+docker compose up --build
+\`\`\`
 
-4. **Review results**
-   - View efficiency metrics and recommendations
-   - Download detailed reports
-   - Use insights for route and fuel planning
+### Option 3 — plain Python
+\`\`\`bash
+cd backend
+pip install -r requirements.txt
+streamlit run bus.py
+\`\`\`
 
-##  What You'll Get
+---
 
-### Efficiency Metrics
-- **Fuel Efficiency**: Distance per fuel percentage (km per % fuel)
-- **Load Impact**: How vehicle weight affects performance
-- **Temperature Effects**: Weather impact on fuel consumption
-- **Route Analysis**: Performance differences between highway, urban, and rural routes
-- **Speed Optimization**: Recommended speed ranges for best efficiency
+## ⚙️ CI/CD Pipeline
 
-### Visual Reports
-The dashboard provides interactive charts and downloadable reports with performance insights and recommendations for fleet optimization.
+Every push to \`main\` triggers GitHub Actions to:
+1. Build the Docker image
+2. Push it to DockerHub as \`latest\`
 
-##  Example Use Cases
+Add these secrets in your GitHub repo settings:
+- \`DOCKERHUB_USERNAME\`
+- \`DOCKERHUB_TOKEN\`
 
-**Route Planning**: Check if a bus can complete a specific route before departure based on current fuel and load conditions.
+---
 
-**Fleet Optimization**: Compare efficiency across multiple vehicles to identify top performers and buses that need attention.
+## 👤 Author
 
-**Cost Management**: Understand fuel consumption patterns to optimize scheduling and reduce operational costs.
-
-##  Acknowledgments
-
-- **Scikit-learn**: For machine learning algorithms
-- **Streamlit**: For the amazing web framework
-- **Plotly**: For interactive visualizations
-- **Pandas & NumPy**: For data manipulation
+**Mohit Jain**
+- GitHub: [@mohitjain2306](https://github.com/mohitjain2306)
+- Live App: [ Bus Efficiency Assistant](https://bus-distance-calculator.streamlit.app/)
+- DockerHub: [mohitjain2306](https://hub.docker.com/u/mohitjain2306)
