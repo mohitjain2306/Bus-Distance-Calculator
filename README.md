@@ -3,7 +3,7 @@
 
 A web application that predicts how far a bus can travel based on fuel level, load, speed, temperature, and route type — with efficiency insights for fleet management.
 
-> **Live Demo:** https://bus-distance-calculator.streamlit.app/
+> **Live Demo:** https://bus-distance.streamlit.app/
 
 ---
 
@@ -131,5 +131,5 @@ DockerHub image: `mohitjain2306/bus-distance-calculator`
 
 **Mohit Jain**
 - GitHub: [@mohitjain2306](https://github.com/mohitjain2306)
-- Live App: [bus-distance-calculator.streamlit.app](https://bus-distance-calculator.streamlit.app/)
+- Live App: [bus-distance.streamlit.app](https://bus-distance.streamlit.app/)
 - DockerHub: [mohitjain2306](https://hub.docker.com/u/mohitjain2306)
